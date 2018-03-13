@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+<bean id="aobj" class="com.spring.ioc.A" lazy-init="false" scope="prototype">
+<property name="a" value="99"/>
+<property name="msg" value="aaa"/>
+</bean>
+
+<bean id="bobj" class="com.spring.ioc.B" lazy-init="false" scope="prototype"> 
+<constructor-arg value="88"/>
+<constructor-arg value="bbb"/>
+</bean>
+
+<bean id="hello" class="com.spring.ioc.Hello" lazy-init="true" scope="singleton">
+<property name="aobj" ref="aobj"/>
+<constructor-arg ref="bobj"/>
+</bean>
+</beans>
