@@ -2,7 +2,8 @@ package com.spring.ioc;
 
 public class A {
 
-    private int a;
+    private int a; 
+    private int c;
     private String msg;
     
 	public void setA(int a) {
